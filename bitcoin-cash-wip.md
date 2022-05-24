@@ -64,8 +64,10 @@ The device could be tampered with in a non evident way or the private key extrac
 
 ### Counterfeit chain / bitcoin
 
-Proof of forging cost is insufficient for the denomination and payee is presented with fake block headers from his trusted source which he can't independently verify: accepts counterfeit bitcoin.
+Proof of forge cost is insufficient for the denomination and payee is presented with fake block headers from his trusted source which he can't independently verify: accepts counterfeit bitcoin.
 
 ## Conclusion
 
 While a theoretical possibility exists for abuse, the risk of running into an online verifier in short order and getting the transactions back-traced by investigators or private individuals is high. All has to be weighted against the cost and difficulty of said attacks compared to the value of the denominations.
+
+Worst case someone with no internet access will have to trust some "authority" to present him with updates on bitcoin metrics and block header checkpoints. However, depending on the source and the scale of the forging operation to be economically viable it paints the picture of a large scale conspiracy where commitments are published that can be independently verified by anyone running a full node and bothering to verify. The more mainstream the publication is, the more people would trust it, the more it is exposed to be falsified. Infrequent updates by the payees actually make it less likely that such an exploit can go unnoticed by the time they would rely on bogus data as scandalous news of an attempted exploit are sure to spread fast.
