@@ -47,6 +47,7 @@ For a simple example let's assume that all PoFC attestations are at least 100 bl
 
 * Counterfeit device
 * Malicious device
+* Tampered device / private key extraction
 * Counterfeit chain / bitcoin
 
 ### Counterfeit device
@@ -57,10 +58,14 @@ Fake device that is visually indistinguishable from the real one: no actual owne
 
 Bogus DRNG for private key generation. The manufacturer can know the private keys and can swipe the UTXO in a way that offline verification will not reveal.
 
+### Tampered device / private key extraction
+
+The device could be tampered with in a non evident way or the private key extracted in a non-invasive way (ex. high-res x-ray on holographic sticker type devices, side channel attacks, etc.). Cost of this type of attack has to be reasonably high compared to the usual UTXO values for physical devices to be viable for transfer of private key ownership.
+
 ### Counterfeit chain / bitcoin
 
 Proof of forging cost is insufficient for the denomination and payee is presented with fake block headers from his trusted source which he can't independently verify: accepts counterfeit bitcoin.
 
 ## Conclusion
 
-While a theoretical possibility exists for abuse, the risk of running into an online verifier in short order and getting the transactions bactraced by investigators or private individuals is high. All has to be weighted against the cost and difficulty of said attacks compared to the value of the denominations.
+While a theoretical possibility exists for abuse, the risk of running into an online verifier in short order and getting the transactions back-traced by investigators or private individuals is high. All has to be weighted against the cost and difficulty of said attacks compared to the value of the denominations.
