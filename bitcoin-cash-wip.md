@@ -36,8 +36,9 @@ The payee having some rough estimate for current difficulty, bitcoin price and a
 
 Over time as price and difficulty goes up, the attestation to PoFC may become insufficient. However even with limited storage capacity there are ways to keep things verifiable:
 
-* Zero-knowledge proofs used to "compress" PoW for an arbitrary number of consecutive blocks
+* Zero-Knowledge proofs used to "compress" PoW for an arbitrary number of consecutive blocks
 * Payee having sporadic access to updates for checkpoint block headers from the longest valid chain
+* Merklized UTXO commitments (or utreexo blocks) may allow refreshing PoFC attestation at a higher difficulty
 
 The first requires the current owner of the UTXO, who's possession the device is in, to update the PoFC from time to time. The second requires the payees to have a not too out of date, sparse snapshot of the block headers.
 
@@ -53,10 +54,12 @@ For a simple example let's assume that all PoFC attestations are at least 100 bl
 ### Counterfeit device
 
 Fake device that is visually indistinguishable from the real one: no actual ownership is being transferred.
+**mitigation:** The device can generate BIP-322 messages to show that it could spend them without revealing the private key. This proves that the device has control over the UTXO, just not necessarily exclusive control. (nothingmuch)
 
 ### Malicious device
 
 Bogus DRNG for private key generation. The manufacturer can know the private keys and can swipe the UTXO in a way that offline verification will not reveal.
+**mitigation:** If the user provides entropy and the device rotates the UTXO to a pubkey which is proven in zero knowledge to be include that *in addition* to its own, then the user can conclude no other device has the private key without learning the private key. (nothingmuch)
 
 ### Tampered device / private key extraction
 
@@ -65,6 +68,7 @@ The device could be tampered with in a non evident way or the private key extrac
 ### Counterfeit chain / bitcoin
 
 Proof of forge cost is insufficient for the denomination and payee is presented with fake block headers from his trusted source which he can't independently verify: accepts counterfeit bitcoin.
+**mitigation:** Merklized UTXO commitments in bitcoin blocks of various kind may be used to update PoFC without heavy ZK proofs by showing the UTXO was part of the UTXO set at a higher block height and higher difficulty. (nothingmuch)
 
 ## Conclusion
 
