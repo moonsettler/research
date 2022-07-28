@@ -7,7 +7,7 @@ both the cost of attack and the reward gets multiplied with the probability of s
 ## PoS
 let's assume 30% of the bitcoin supply gets staked, let’s assume simple epoch based drng staking, with 51% votes on no-show! out of 19m btc 5.7m is staked, 51% of that is 2.9m btc. at current prices ($20k) that is $59 billion locked in for 51% stakes.
 
-the attackers being real bad at risk assesment, predict that the successful sucial consensus against them is only 10% and they assume they have a 90% chance of getting their reorg accepted as the longest chain and get away with it. (this is absolutely outrageously unrealistic, but we are working under the assumption that social consensus on sanctions is not easy to achieve)
+the attackers being real bad at risk assesment, predict that the chance of a successful social consensus against them is only 10% and they assume they have a 90% chance of getting their reorg accepted as the longest chain and get away with it. (this is absolutely outrageously unrealistic, but we are working under the assumption that social consensus on sanctions is not easy to achieve)
 ```
 expected returns in case of success: 0.9 * 0.51 * 10,000 btc - share of the block rewards for 144 blocks ~1000 btc * 0.51
 
