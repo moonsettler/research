@@ -18,13 +18,13 @@ Registration cert issued by Vote Organizer via blind signature scheme. The VO ne
 ## Trustless multiparty identity verification or voting pass issuance
 ### Each participant: *Alice, Bob, Carol the candidates and Mallory*
  1.  **rv = rng(2^128)** *generate random vector rv [128 bit]*
- 2.  **m = pollId|rv** *message m [256 bit], is ballotId [128 bit]concatenated with random vector rv [128 bit]*
+ 2.  **m = ballotId|rv** *message m [256 bit], is ballotId [128 bit]concatenated with random vector rv [128 bit]*
  3.  **h(m) = sha256(m)** *hash h [256 bit] is sha256 hash of message m*
  4.  **s = sign(k, h)** *sign hash h with private key k for pubkey p*
  5.  **reveal (h, s), but not m**
  6.  **wait until all signatures are revealed and all messages commited to; check_sig(p, h)**
  7.  **reveal m**
- 8.  **wait until all messages are revealed; check h'i = sha256(m'i); check pollId**
+ 8.  **wait until all messages are revealed; check h'i = sha256(m'i); check ballotId**
  9.  **rv'i = split(m'i)** *extract all rv*
 10.  **xrv = null; foreach(rv') => xrv = xor(xrv, rv'i)**
 11.  **drng_init(xrv)**
