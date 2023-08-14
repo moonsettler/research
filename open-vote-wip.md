@@ -31,6 +31,10 @@ Registration cert issued by Vote Organizer via blind signature scheme. The VO ne
 12.  **ci = drng(cn)** *ci choosen certificate index = drng(cn) where cn is the number of certificates c[] submitted*
 13.  **bs = bsig(k, c'ci)** *same as in a chaumian mint, have applicant reveal every member of c except ci!*
 
+tldr: Everyone must sign a hash commitment for a round and everyone receives the commitments before they release their random vector for the drng seed!
+
+### Alternative approach with BDH
+Alternatively as a simpler scheme: each ballot can be identified by a shared public key of the signers; a VP would just be a signed pubkey hash, and then there is no reason to jump through all these hoops, there is no need to have probabilistic commit reveal verification. This is not dissimilar how chaumian ecash tokens would be signed by different keys for their different denominations. ballotId in this case could be the hash of the schnorr aggregate pubKey of the VO.
 
 ## Private Voting and Public Tabulating
  1.  VP pubkey is used to sign a vote (voting transaction)
